@@ -535,7 +535,7 @@ header .container .icons li:hover {
     padding: 50px 0;
     background-image: url(../images/food.jpg);
     background-size: cover;
-    color: #ccc;
+    color: white;
 }
 .order-now .container {
     padding: 0;
