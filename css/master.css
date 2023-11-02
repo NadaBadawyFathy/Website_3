@@ -665,6 +665,7 @@ header .container .icons li:hover {
 }
 .our-team .container .team > div:hover .box {
     z-index: 1;
+    padding: 0px 25px;
 }
 .our-team .container .team > div .box h4 {
     margin: 0 0 10px;
