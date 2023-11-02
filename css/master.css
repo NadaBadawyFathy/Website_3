@@ -1,0 +1,725 @@
+/* Start variables */
+:root {
+    --main-color: #ffa500;
+    --section-padding: 100px;
+}
+/* End variables */
+/* Start global rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'open Sans', sans-serif;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Large */ 
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End global rules */
+/* Start components */
+.container h2 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.container h2 span {
+    color: var(--main-color);
+    font-family: 'Playpen Sans', cursive;
+}
+/* End components */
+/* Start Header */
+header {
+    width: 100%;
+    background-color: white;
+    padding: 5px;
+    position: fixed;
+    z-index: 3;
+    box-shadow: 0px  1px 7px #ddd;
+    top: 0;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container img {
+    height: 40px;
+}
+header .container nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header .container nav .menu {
+    color: var(--main-color);
+    font-size: 18px;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    header .container nav .menu {
+        display: none;
+    }
+}
+header .container nav .ul {
+    display: flex;
+}
+@media (max-width: 767px) {
+    header .container nav .ul {
+        display: none;
+    }
+    header .container nav .menu:hover + .ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        right: 0;
+        background-color: rgb(0 0 0 / 55%);
+    }
+    header .container nav .ul a {
+        color: white !important;
+        padding-left: 15px !important;
+        border-bottom: 1px solid var(--main-color);
+    }
+    header .container nav .ul li:last-child a {
+        border: 0;
+    }
+}
+header .container nav .ul a {
+    display: block;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 25px;
+    position: relative;
+    transition: .5s;
+}
+header .container nav .ul a::after {
+    content: " ";
+    position: absolute;
+    height: 2px;
+    width: 80%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(to left,
+    transparent,
+    transparent 50%,
+    var(--main-color)50%,
+    var(--main-color));
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: .5s;
+}
+header .container nav .ul a:hover::after
+, header .container nav .ul a:hover{
+    color: var(--main-color);
+    background-position: 0% 100%;
+}
+header .container .icons {
+    display: flex;
+}
+@media (max-width: 767px) {
+    header .container .icons {
+        display: none;
+    }
+}
+header .container .icons li {
+    padding: 10px 5px;
+    transition: .5s;
+    cursor: pointer;
+}
+header .container .icons li:hover {
+    color: var(--main-color);
+}
+/* End Header */
+/* Start landing */
+.landing {
+    padding: var(--section-padding) 0 50px;
+    background-image: url(../images/landing.webp);
+    background-size: cover;
+}
+.landing .container .first-landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 992px) {
+    .landing .container .first-landing {
+        flex-direction: column;
+        text-align: center;
+    }
+} 
+.landing .container .first-landing img {
+    max-width: 100%;
+}
+.landing .container .first-landing .fast-food {
+    width: 600px;
+    max-width: 100%;
+}
+@media (max-width: 992px) {
+    .landing .container .fast-food {
+        order: 2;
+    }
+    .landing .container .first-landing .image {
+        order: 1;
+        margin: 0 auto !important;
+    }
+} 
+.landing .container .first-landing .fast-food h1 {
+    font-size: 60px;
+}
+.landing .container .fast-food h1 span {
+    color: var(--main-color);
+}
+.landing .container .fast-food p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #777;
+}
+.landing .container .order {
+    display: flex;
+    position: relative;
+    width: fit-content;
+}
+@media (max-width: 1200px) {
+    .landing .container .order {
+        margin: 50px auto 0;
+    }
+}
+.landing .container .order button {
+    display: block;
+    padding: 10px 40px 10px 30px;
+    border-radius: 25px;
+    background-color: var(--main-color);
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+.landing .container .order i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    color: white;
+    transition: .3s;
+    cursor: pointer;
+}
+@keyframes right {
+    0% {
+        margin-left: 0;
+    }
+    50% {
+        margin-right: 5px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+.landing .container .order:hover i {
+    animation-name: right;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+/* End landing */
+/* Start about */
+.about-us {
+    padding: var(--section-padding) 5px;
+}
+.about-us .container {
+    width: 95%;
+    padding: 0;
+}
+.about-us .about {
+    display: flex;
+    /* align-items: center; */
+    gap: 30px;
+}
+@media (max-width: 992px) {
+    .about-us .about {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.about-us .about .image {
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+    border-right: 1px solid var(--main-color);
+}
+@media (max-width: 992px) {
+    .about-us .about .image {
+        border: 0;
+        margin: 0 auto;
+    }
+}
+.about-us .about .choose {
+    flex: 1;
+}
+.about-us .about img {
+    max-width: 100%;
+}
+.about-us .about .choose h2 span{
+    color: var(--main-color);
+    font-family: 'Playpen Sans', cursive;
+}
+.about-us .about .choose h4 {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 35px;
+}
+.about-us .about .choose p {
+    font-size: 12px;
+    line-height: 2;
+    color: #333;
+}
+.about-us button {
+    display: block;
+    margin: 30px auto 0;
+    background-color: var(--main-color);
+    box-shadow: 0px 1px 8px 1px orangered;
+    border: 1px solid orangered;
+    color: white;
+    padding: 15px 20px;
+    border: 0;
+    border-radius: 2px;
+    transition-duration: .5s;
+    cursor: pointer;
+}
+.about-us button:hover {
+    background-color: #333;
+    box-shadow: 1px 1px 8px 1px black;
+}
+/* End about */
+/* Start menu */
+.our-menu {
+    padding-bottom: var(--section-padding);
+}
+.our-menu .container {
+    width: 90%;
+    padding: 0;
+}
+.our-menu .container .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(300px, 1fr));
+    gap: 30px;
+}
+.our-menu .container .menu > div {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 8px 1px #ddd;
+    text-align: center;
+    overflow: hidden;
+}
+.our-menu .container .menu > div > div {
+    position: relative;
+    overflow: hidden;
+}
+.our-menu .container .menu > div > div img {
+    max-width: 100%;
+    transition: .3s;
+} 
+.our-menu .container .menu > div:hover img {
+    transform: scale(1.1);
+}
+.our-menu .container .menu > div > div .nav {
+    position: absolute;
+    left: -50px;
+    top: 30px;
+    color: black;
+    font-size: 20px;
+    transition: .4s ease;
+}
+.our-menu .container .menu > div:hover .nav {
+    left: 30px;
+}
+.our-menu .container .menu > div h4 {
+    font-size: 20px;
+    color: var(--main-color);
+    margin: 15px 0;
+}
+.our-menu .container .menu > div p {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.our-menu .container .menu > div span {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.our-menu .container .menu > div ul {
+    display: flex;
+    color: var(--main-color);
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.our-menu .container .menu > div ul li i {
+    font-size: 12px;
+    padding: 3px;
+}
+.our-menu .container .menu > div button {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    background-color: black;
+    margin: 0 auto;
+    border: 0;
+    background-image: linear-gradient(to left,
+    transparent,
+    transparent 50%,
+    var(--main-color)50%,
+    var(--main-color));
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: .5s;
+    cursor: pointer;
+}
+.our-menu .container .menu > div button:hover {
+    background-position: 0% 100%;
+}
+/* End menu */
+/* Start gallary */
+.our-gallary {
+    padding-bottom: var(--section-padding);
+}
+.our-gallary .container {
+    width: 90%;
+    padding: 0;
+}
+.our-gallary .container .gallary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.our-gallary .container .gallary > div {
+    position: relative;
+    overflow: hidden;
+}
+.our-gallary .container .gallary > div img {
+    width: 100%;
+}
+.our-gallary .container .gallary > div .food {
+    position: absolute;
+    bottom: -100%;
+    padding: 10px;
+    background-color: rgb(0 0 0 / 75%);
+    text-align: center;
+    transition: .3s;
+}
+.our-gallary .container .gallary > div:hover .food {
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+.our-gallary .container .gallary > div .food h4 {
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--main-color);
+    margin: 30px 0 25px 0;
+}
+.our-gallary .container .gallary > div .food p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 20px;
+}
+.our-gallary .container .gallary > div .food button {
+    padding: 5px;
+    font-size: 13px;
+    border: 0;
+    background-color: var(--main-color);
+    cursor: pointer;
+    transition: .3s;
+}
+.our-gallary .container .gallary > div .food button:hover {
+    color: white;
+}
+/* End gallary */
+/* Start customer */
+.customer-review {
+    padding-bottom: var(--section-padding);
+}
+.customer-review .container {
+    padding: 0;
+    width: 90%;
+}
+.customer-review .container .customer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+    text-align: center;
+}
+.customer-review .container .customer > div {
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 2px #ddd;
+    padding: 10px;
+}
+.customer-review .container .customer .content {
+    transition: .3s;
+}
+.customer-review .container .customer .content img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid gainsboro;
+}
+.customer-review .container .customer .content h4 {
+    font-size: 20px;
+}
+.customer-review .container .customer .content ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.customer-review .container .customer .content ul li i {
+    color: var(--main-color);
+    padding: 3px;
+    font-size: 12px;
+}
+.customer-review .container .customer > div:hover .content {
+    opacity: 1;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+.customer-review .container .customer .review-icons{
+    transition: .3s ease;
+    opacity: 0;
+}
+.customer-review .container .customer > div:hover .review-icons {
+    opacity: 1;
+    margin-top: -25px;
+    margin-bottom: 25px;
+}
+.customer-review .container .customer .review-icons i {
+    font-size: 12px;
+}
+.customer-review .container .customer > div p {
+    padding-top: 30px;
+    line-height: 2;
+    font-size: 12px;
+    color: #777;
+}
+/* End customer */
+/* Start order */
+.order-now {
+    padding: 50px 0;
+    background-image: url(../images/food.jpg);
+    background-size: cover;
+    color: white;
+}
+.order-now .container {
+    padding: 0;
+    width: 90%;
+}
+.order-now .container .order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 1128px) {
+    .order-now .container .order {
+        flex-direction: column;
+    }
+}
+.order-now .container .order img {
+    width: 500px;
+    max-width: 100%;
+}
+.order-now .container .order .inputs {
+    width: 550px;
+    max-width: 100%;
+}
+.order-now .container .order .inputs .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+@media (max-width: 767px) {
+    .order-now .container .order .inputs .content {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+}
+.order-now .container .order .inputs .content form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.order-now .container .order .inputs .content input {
+    display: block;
+    padding: 6px 10px;
+    width: 260px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: ghostwhite;
+    caret-color: var(--main-color);
+}
+.order-now .container .order .inputs .content input:focus {
+    outline: none;
+    border: 1px solid var(--main-color);
+}
+.order-now .container .order .inputs .content form ::placeholder {
+    font-size: 11px;
+    color: var(--main-color);
+}
+.order-now .container .order .inputs .button {
+    display: block;
+    margin-top: 100px;
+    background-color: var(--main-color);
+    box-shadow: 0px 1px 8px 1px orangered;
+    border: 1px solid orangered;
+    color: white;
+    padding: 15px 20px;
+    border: 0;
+    border-radius: 2px;
+    transition-duration: .5s;
+    cursor: pointer;
+}
+.order-now .container .order .inputs .button:hover {
+    background-color: #333;
+    box-shadow: 1px 1px 8px 1px black;
+}
+@media (max-width: 1128px) {
+    .order-now .container .order .inputs .button {
+        margin: 30px auto 0;
+    }
+}
+/* End order */
+/* Start team */
+.our-team {
+    /* margin-top: 100px; */
+    padding: 50px 0;
+    background-image: url(../images/team.jpg);
+    background-size: cover;
+}
+.our-team .container {
+    width: 90%;
+    padding: 0;
+}
+.our-team .container .team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 20px;
+    text-align: center;
+    margin-top: 130px;
+}
+.our-team .container .team > div {
+    box-shadow: 0px 1px 8px 1px #ddd;
+    border-radius: 50%;
+    position: relative;
+    transition: .3s;
+    width: 250px;
+    margin: 0 auto;
+}
+.our-team .container .team > div:hover {
+    border-radius: 10px;
+}
+.our-team .container .team > div img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 25px;
+    transition: .3s;
+}
+.our-team .container .team > div:hover img {
+    margin-top: -100px;
+    margin-bottom: 150px;
+    border-radius: 15px;
+}
+.our-team .container .team > div .box {
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+}
+.our-team .container .team > div:hover .box {
+    z-index: 1;
+}
+.our-team .container .team > div .box h4 {
+    margin: 0 0 10px;
+    color: var(--main-color);
+    font-size: 20px;
+} 
+.our-team .container .team > div .box p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+.our-team .container .team > div .box i {
+    font-size: 12px;
+}
+/* End team */
+/* Start footer */
+.footer {
+    background-image: url(../images/food.jpg);
+    background-size: cover;
+    color: white;
+}
+.footer .container {
+    width: 90%;
+    padding: 25px 0 10px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    column-gap: 25px;
+    row-gap: 15px;
+    text-align: center;
+}
+.footer .container .box h3 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+.footer .container .box p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+.footer .container .box p:hover {
+    color: #ccc;
+}
+.footer .container .box i {
+    padding: 3px;
+    font-size: 13px;
+    color: #777;
+    cursor: pointer;
+    transition: .3s;
+}
+.footer .container .box i:hover {
+    color: var(--main-color);
+}
+/* End footer */
